@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url('background.jpeg'); /* 设置背景图片 */
+    background-repeat: repeat; /* 图片平铺 */
+}
+
+
+header, nav, section, footer {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+header {
+    color: #000000; /* Oldlace */
+    text-align: center;
+    padding: 50px;
+}
+
+
+nav {
+    position: absolute; /* 将导航栏定位于页面的左侧 */
+    left: 0;
+    top: 0;
+    width: 300px; /* 设置导航栏宽度 */
+    height: 100%;
+}
+
+nav ul {
+    list-style-type: none; /* 移除bullet points */
+    padding: 0; /* 根据需要调整内边距 */
+    margin: 0; /* 根据需要调整外边距 */
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    display: flex; /* 使用 flex 布局 */
+    flex-direction: column; /* 元素垂直排列 */
+    align-items: center; /* 水平居中对齐项目 */
+    justify-content: flex-end; /* 将内容对齐到容器的末尾，使文字出现在底部 */
+    padding: 80px 20px 20px; /* 增加上方padding以留出图片空间，下方保持文字空间 */
+    background-image: url('littleelephant.jpg'); /* 设置静态小象背景 */
+    background-repeat: no-repeat;
+    background-position: center; /* 图像居中 */
+    background-size: cover; /* 图像填充整个元素 */
+    height: 200px; /* 设置足够的高度以容纳背景图像和文字 */
+    margin-bottom: 10px; /* 在导航项之间添加一些间隔 */
+    transition: background 0.5s ease; /* 平滑过渡效果 */
+}
+
+nav ul li a:hover {
+    background-image: url('littleelephant.gif'); /* 设置动态小象背景 */
+}
+
+footer {
+    font-size: 0.8em;
+    text-align: center;
+}
