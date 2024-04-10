@@ -11,38 +11,59 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#satellite-fault-detection">Satellite Fault Detection</a></li>
-            <li><a href="#space-robots">Space Robots</a></li>
-            <li><a href="#recent-books">Recent Books</a></li>
+            <li><a href="#about-domain">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#recommended-books">Recommended Books</a></li>
+            <li><a href="#recent-music">Recent Music</a></li>
             <li><a href="#musings">Musings</a></li>
             <!-- More navigation items -->
         </ul>
-    </nav>    
-    <section>
-        <h2>About Domain</h2>
-        <p>She is a mysterious girl who loves to read and contemplate. She also enjoys mystery games in her spare time.<br>
+    </nav> 
+       
+    <div class="content">
+        <section id="about-domain">
+            <h2>About Domain</h2>
+            <img src="floral.gif" alt="Floral Image" style="float: right; width: 200px; height: auto;">
+            <p>She is a mysterious girl who loves to read and contemplate. She also enjoys mystery games in her spare time.<br>
             Please feel free to look around 👣~</p>
-        <h2 id="satellite-fault-detection">Satellite Fault Detection</h2>
-        <!-- Satellite Fault Detection related content -->
-    </section>
-    <section>
-        <h2 id="space-robots">Space Robots</h2>
-        <!-- Space Robots related content -->
-    </section>
-    <section>
-        <h2 id="recent-books">Recent Books</h2>
-        <!-- Recent Books related content -->
-    </section>
-    <section>
-        <h2 id="musings">Musings</h2>
-        <!-- Musings related content -->
-    </section>
-    
+        </section>
+        
+        <section id="projects" style="display: none;">
+            <h2>Projects</h2>
+            <p>Satellite Fault Detection</p>
+            <p>Space Robots</p>
+        </section>
+        
+        <section id="recommended-books" style="display: none;">
+            <h2>Recommended Books</h2>
+            <p>Sapiens</p>
+            <p>Walden</p>
+        </section>
+        
+        <section id="recent-music" style="display: none;">
+            <h2>Recent Music</h2>
+            <p>The Other Side of Paradise</p>
+        </section>
+        
+        <section id="musings" style="display: none;">
+            <h2>Musings</h2>
+            <p>Share your thoughts today!</p>
+            <div id="musings-posts"></div>
+            <input type="text" id="username" placeholder="Username">
+            <textarea id="musing-content" placeholder="Your musings here (up to 2000 characters)..." maxlength="2000"></textarea>
+            <input type="file" id="musing-image" accept="image/*">
+            <button onclick="postMusing()">Post</button>
+        </section>
+    </div>    
     
     <footer>
-        <!-- 页脚信息 -->
+        <p>It' s wonderful if you reached out to her:</p>
+        <p>Email: <a href="mailto:domain@example.com">284712913@qq.com</a></p>
     </footer>
+    <script src="script.js"></script>    
+
 </body>
 </html>
+
 
 

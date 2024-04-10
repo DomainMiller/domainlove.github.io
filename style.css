@@ -3,62 +3,94 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background-image: url('background.jpeg'); /* 设置背景图片 */
-    background-repeat: repeat; /* 图片平铺 */
-}
-
-
-header, nav, section, footer {
-    margin: 20px auto;
-    max-width: 800px;
-    padding: 20px;
+    background-image: url('background.jpeg'); /* 使用平铺的背景图 */
+    background-repeat: repeat;
 }
 
 header {
-    color: #000000; /* Oldlace */
+    background-color: #CCCC00; /* 土绿背景 */
+    color: #336666;
     text-align: center;
     padding: 50px;
+    margin: 0 auto; /* 为下面的导航栏留出空间 */
 }
 
-
 nav {
-    position: absolute; /* 将导航栏定位于页面的左侧 */
-    left: 0;
-    top: 0;
-    width: 300px; /* 设置导航栏宽度 */
-    height: 100%;
+    background-color: #666600; /* 深绿背景 */
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 nav ul {
-    list-style-type: none; /* 移除bullet points */
-    padding: 0; /* 根据需要调整内边距 */
-    margin: 0; /* 根据需要调整外边距 */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
+nav ul li {
+    margin: 5px;
+}
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #FFFF66;
     font-size: 1.2em;
-    display: flex; /* 使用 flex 布局 */
-    flex-direction: column; /* 元素垂直排列 */
-    align-items: center; /* 水平居中对齐项目 */
-    justify-content: flex-end; /* 将内容对齐到容器的末尾，使文字出现在底部 */
-    padding: 80px 20px 20px; /* 增加上方padding以留出图片空间，下方保持文字空间 */
-    background-image: url('littleelephant.jpg'); /* 设置静态小象背景 */
-    background-repeat: no-repeat;
-    background-position: center; /* 图像居中 */
-    background-size: cover; /* 图像填充整个元素 */
-    height: 200px; /* 设置足够的高度以容纳背景图像和文字 */
-    margin-bottom: 10px; /* 在导航项之间添加一些间隔 */
-    transition: background 0.5s ease; /* 平滑过渡效果 */
+    padding: 10px 20px;
+    background-color: #666600; /* 保持与导航栏相同的背景颜色 */
+    border-radius: 5px; /* 轻微圆角效果 */
 }
 
 nav ul li a:hover {
-    background-image: url('littleelephant.gif'); /* 设置动态小象背景 */
+    background-color: #ddd;
+    color: black;
+}
+
+#about-domain img {
+    width: 200px; /* 或者你想要的任何尺寸 */
+    height: auto; /* 保持图片的宽高比 */
+}
+
+section {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: transparent; /* 保持背景透明显示背景图 */
+}
+
+html, body {
+    width: 100%; /* 确保根元素填满横向空间 */
+    height: 100%; /* 之前设置的，确保高度填满 */
+    margin: 0; /* 移除默认外边距 */
+    padding: 0; /* 移除默认内边距 */
+    display: flex;
+    flex-direction: column; /* 页面内容沿主轴（垂直方向）排列 */
+}
+
+header, nav, .content, footer {
+    width: 100%; /* 确保这些元素填满横向空间 */
+}
+
+.content {
+    flex: 1; /* 确保内容区域能够伸展 */
+    padding: 20px; /* 这会为内容区域内部提供一些空间，根据你的设计需要可能要调整 */
 }
 
 footer {
+    height: 40px; /* 你希望的footer高度 */
+    position: relative; /* 如果你不希望它固定在底部 */
+    background-color: #666600; /* 深绿 */
+    color: white;
     font-size: 0.8em;
     text-align: center;
+    padding: 20px; 
+    margin-top: 20px;
 }
+
+footer p {
+    margin: 0; /* 移除段落的默认外边距 */
+}
+
