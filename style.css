@@ -79,6 +79,49 @@ header, nav, .content, footer {
     padding: 20px; /* 这会为内容区域内部提供一些空间，根据你的设计需要可能要调整 */
 }
 
+#musings {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#username, #musing-content, .camera-icon, button {
+    margin-bottom: 10px; /* 为每个元素添加底部间距 */
+}
+
+#musing-content {
+    width: 100%; /* 确保留言框充满容器宽度 */
+    height: 150px; /* 设置一个较大的初始高度 */
+    resize: vertical; /* 允许用户垂直调整大小 */
+}
+
+.button-container {
+    display: flex; /* 设置 flex 容器，使子项在一行显示 */
+    align-items: center; /* 这将确保子项在容器内垂直居中对齐 */
+    justify-content: flex-start; /* 这将确保子项在容器开始处对齐 */
+}
+
+.camera-icon {
+    display: inline-block; /* 使标签表现得像一个块，这样它就可以有宽度和高度 */
+    width: 50px; /* 图标宽度 */
+    height: 50px; /* 图标高度 */
+    background-image: url('camera.png'); /* 图标路径，请确保它是正确的 */
+    background-size: cover; /* 背景图片覆盖整个元素 */
+    cursor: pointer; /* 鼠标悬停时显示指针，明确这是一个可以点击的元素 */
+    margin-right: 50px; 
+}
+
+button {
+    height: 40px; /* 设置按钮高度与相机图标一致 */
+    padding: 0 20px; /* 可能需要调整按钮的左右内边距，使文本垂直居中 */
+    padding: 10px 20px; /* 按钮内边距 */
+    cursor: pointer; /* 将鼠标光标改为指针形式 */
+    border: none; /* 移除边框 */
+    background-color: #f19123; /* 设置背景颜色 */
+    color: white; /* 设置文字颜色 */
+    border-radius: 5px; /* 圆角边框 */
+}
+
 footer {
     height: 40px; /* 你希望的footer高度 */
     position: relative; /* 如果你不希望它固定在底部 */

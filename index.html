@@ -47,12 +47,15 @@
         
         <section id="musings" style="display: none;">
             <h2>Musings</h2>
-            <p>Share your thoughts today!</p>
+            <p>💬 Share your thoughts today!</p>
             <div id="musings-posts"></div>
             <input type="text" id="username" placeholder="Username">
             <textarea id="musing-content" placeholder="Your musings here (up to 2000 characters)..." maxlength="2000"></textarea>
-            <input type="file" id="musing-image" accept="image/*">
-            <button onclick="postMusing()">Post</button>
+            <input type="file" id="musing-image" accept="image/*" style="display: none;">
+            <div class="button-container">
+                <label for="musing-image" class="camera-icon"></label>
+                <button onclick="postMusing()">Post</button>
+            </div>         
         </section>
     </div>    
     
