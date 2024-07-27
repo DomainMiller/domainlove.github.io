@@ -7,18 +7,29 @@ body {
     background-repeat: repeat;
 }
 
+html, body {
+    width: 100%; /* 确保根元素填满横向空间 */
+    height: 100%; /* 确保高度填满 */
+    margin: 0; /* 移除默认外边距 */
+    padding: 0; /* 移除默认内边距 */
+    display: flex;
+    flex-direction: column; /* 页面内容沿主轴（垂直方向）排列 */
+}
+
 header {
     background-color: #CCCC00; /* 土绿背景 */
     color: #336666;
     text-align: center;
-    padding: 50px;
-    margin: 0 auto; /* 为下面的导航栏留出空间 */
+    padding: 50px 0; /* 修改内边距，仅在顶部和底部添加 */
+    margin: 0 auto;
+    width: 100%; /* 确保头部填满横向空间 */
 }
 
 nav {
     background-color: #666600; /* 深绿背景 */
-    padding: 10px;
+    padding: 10px 0; /* 修改内边距，仅在顶部和底部添加 */
     margin: 0 auto;
+    width: 100%; /* 确保导航栏填满横向空间 */
     text-align: center;
 }
 
@@ -50,7 +61,7 @@ nav ul li a:hover {
 }
 
 #about-domain img {
-    width: 200px; /* 或者你想要的任何尺寸 */
+    width: 200px;
     height: auto; /* 保持图片的宽高比 */
 }
 
@@ -59,19 +70,6 @@ section {
     max-width: 800px;
     padding: 20px;
     background-color: transparent; /* 保持背景透明显示背景图 */
-}
-
-html, body {
-    width: 100%; /* 确保根元素填满横向空间 */
-    height: 100%; /* 之前设置的，确保高度填满 */
-    margin: 0; /* 移除默认外边距 */
-    padding: 0; /* 移除默认内边距 */
-    display: flex;
-    flex-direction: column; /* 页面内容沿主轴（垂直方向）排列 */
-}
-
-header, nav, .content, footer {
-    width: 100%; /* 确保这些元素填满横向空间 */
 }
 
 .content {
@@ -86,46 +84,45 @@ header, nav, .content, footer {
 }
 
 #username, #musing-content, .camera-icon, button {
-    margin-bottom: 10px; /* 为每个元素添加底部间距 */
+    margin-bottom: 10px;
 }
 
 #musing-content {
-    width: 100%; /* 确保留言框充满容器宽度 */
-    height: 150px; /* 设置一个较大的初始高度 */
-    resize: vertical; /* 允许用户垂直调整大小 */
+    width: 100%;
+    height: 150px;
+    resize: vertical;
 }
 
 .button-container {
-    display: flex; /* 设置 flex 容器，使子项在一行显示 */
-    align-items: center; /* 这将确保子项在容器内垂直居中对齐 */
-    justify-content: flex-start; /* 这将确保子项在容器开始处对齐 */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .camera-icon {
-    display: inline-block; /* 使标签表现得像一个块，这样它就可以有宽度和高度 */
-    width: 50px; /* 图标宽度 */
-    height: 50px; /* 图标高度 */
-    background-image: url('camera.png'); /* 图标路径，请确保它是正确的 */
-    background-size: cover; /* 背景图片覆盖整个元素 */
-    cursor: pointer; /* 鼠标悬停时显示指针，明确这是一个可以点击的元素 */
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url('camera.png');
+    background-size: cover;
+    cursor: pointer;
     margin-right: 50px; 
 }
 
 button {
-    height: 40px; /* 设置按钮高度与相机图标一致 */
-    padding: 0 20px; /* 可能需要调整按钮的左右内边距，使文本垂直居中 */
-    padding: 10px 20px; /* 按钮内边距 */
-    cursor: pointer; /* 将鼠标光标改为指针形式 */
-    border: none; /* 移除边框 */
-    background-color: #f19123; /* 设置背景颜色 */
-    color: white; /* 设置文字颜色 */
-    border-radius: 5px; /* 圆角边框 */
+    height: 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #f19123;
+    color: white;
+    border-radius: 5px;
 }
 
 footer {
-    height: 40px; /* 你希望的footer高度 */
-    position: relative; /* 如果你不希望它固定在底部 */
-    background-color: #666600; /* 深绿 */
+    height: 40px;
+    position: relative;
+    background-color: #666600;
     color: white;
     font-size: 0.8em;
     text-align: center;
@@ -134,6 +131,7 @@ footer {
 }
 
 footer p {
-    margin: 0; /* 移除段落的默认外边距 */
+    margin: 0;
 }
+
 
