@@ -19,6 +19,51 @@ document.addEventListener('DOMContentLoaded', function() {
     loadMusings();
 });
 
+// 获取元素
+const video = document.getElementById('intro-video');
+const aboutText = document.getElementById('about-text');
+const aboutParas = aboutText.querySelectorAll('p');
+
+// 当视频播放结束时显示文字并淡入
+video.addEventListener('ended', () => {
+  // 隐藏视频
+  video.style.display = 'none';
+  // 显示文字容器
+  aboutText.style.display = 'block';
+  // 一行一行淡入显示
+  fadeInLines(aboutParas, 0);
+});
+
+function fadeInLines(lines, index) {
+  if (index < lines.length) {
+    lines[index].classList.add('show');
+    setTimeout(() => {
+      fadeInLines(lines, index + 1);
+    }, 500); // 每行延迟0.5秒淡入下一行，可根据需要调整
+  }
+}
+
+// 如果用户通过进度条将视频拉到末尾，也会触发ended事件
+video.addEventListener('timeupdate', () => {
+  if (video.duration > 0 && (video.currentTime >= video.duration - 0.1)) {
+    video.dispatchEvent(new Event('ended'));
+  }
+});
+
+document.querySelectorAll('.video-container').forEach(container => {
+    const video = container.querySelector('video');
+
+    // 鼠标悬停播放视频
+    container.addEventListener('mouseenter', () => {
+        video.play();
+    });
+
+    // 鼠标移出暂停视频
+    container.addEventListener('mouseleave', () => {
+        video.pause();
+    });
+});
+
 function postMusing() {
     const username = document.getElementById('username').value.trim();
     const content = document.getElementById('musing-content').value.trim();
@@ -107,4 +152,3 @@ function removeMusing(musingToRemove) {
     musings = musings.filter(musing => musing.date !== musingToRemove.date || musing.username !== musingToRemove.username || musing.content !== musingToRemove.content);
     localStorage.setItem('musings', JSON.stringify(musings));
 }
-

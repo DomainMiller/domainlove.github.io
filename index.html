@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>我的个人网页</title>
+    <title>Domain's Nook</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -14,72 +15,255 @@
             <li><a href="#about-domain">Home</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#recommended-books">Recommended Books</a></li>
-            <li><a href="#recent-music">Recent Music</a></li>
+            <li><a href="#unique-music">Unique Music</a></li>
             <li><a href="#musings">Musings</a></li>
             <!-- More navigation items -->
         </ul>
     </nav> 
        
-    <div class="content">
-        <section id="about-domain">
-            <h2>About Her</h2>
-            <img src="floral.gif" alt="Floral Image" style="float: right; width: 200px; height: auto;">
-            <p>1. She is very mysterious, has a lot to say, but chooses to keep silent on the surface. 🤫</p>
-            <p>2. Not an idealist, but a very practical and utilitarian person. Real life is a mess, so she loves to be sarcastic.</p>
-            <p>3. Hates things that are useless to her, yes, that includes you who are reading this. 🚫</p>
-            <p>4. The above content is mostly wrong, but not entirely.</p>
-            <p>5. Likes to look at adorable things, but just likes to look. 🧸</p>
-            <p>6. A minimalist with a decluttering disorder, she threw everything away in the end, but hasn't thrown away her life yet... 😇</p>
-            <p>7. She's easy to take care, just needs a lot of mental food, like lots of books and online courses. 📚</p>
-            <p>8. She's not very happy every day. </p>
-            <p>9. She thrives on brainy variety shows and books; these are her mental munchies. But beware, serving the wrong type of food can unleash her wrath—a perilous venture indeed! Proceed with caution. 🚨</p>
-            <p> <br>
-            Please feel free to look around 👣~</p>
+    <div class="content">                 
+        <section id="about-domain" class="container py-5">
+            <h2 class="text-center mb-4">About Her</h2>
+            <!-- 视频容器 -->
+            <div class="text-center">
+                <video id="intro-video" src="heart.mp4" preload="auto" controls></video>
+            </div>
+        
+            <!-- 关于文字内容 -->
+            <div id="about-text" class="mt-5">
+                <p>She, is mysterious, often has many deep thoughts about trivial things, but chooses to say nothing at all.</p>
+                <p>Loves sarcasm, hates life, but tries to be practical and utilitarian.</p>
+                <p>A minimalist with a decluttering disorder, she threw everything away in the end, but hasn't thrown away her life yet...</p>
+                <p>Hates things that are useless to her, yes, that includes you who waste time reading this.</p>
+                <p>The above content is mostly wrong, but not entirely.</p>
+                <p class="text-center text-muted mt-3">Please feel free to look around 👣</p>
+            </div>
+        </section>                                             
+        
+        <section id="projects" style="display: none;" class="container mt-5">
+            <div class="row align-items-center border-bottom pb-4 mb-4">
+                <div class="col-md-4">
+                    <video width="100%" controls>
+                        <source src="space_robot.mp4" type="video/mp4">
+                        Your browser does not support the video tag, but you can still download the video from <a href="space_robot.mp4">here</a>.
+                    </video>
+                </div>
+                <div class="col-md-8">
+                    <h3>Autonomous Path Planning for Space Robots Based on Vision Measurement</h3>
+                    <p>The research background for this project is the placement and trajectory planning problem of a free-floating space robot, and a space robot system based on visual measurement has been designed. Initially, monocular vision is used to preliminarily measure the cooperative target, and the target's motion is estimated based on the measurement results. According to the predicted target motion velocity, velocity planning is carried out for both the end of the robot arm and the base. With the determined end-effector velocity, velocity-level inverse kinematics is employed to solve for the joint angular velocities, thus controlling joint movements. Finally, forward kinematics recalculates the position and orientation of the robot arm's end. Additionally, a system model was built in SIMULINK, incorporating a PID control module to adjust relevant parameters until the joint movements were smooth, and visualized the process of the space robot placing the target.</p>
+                </div>
+            </div>
+
+            <div class="row align-items-center border-bottom pb-4 mb-4">
+                <div class="col-md-4">
+                    <img src="non_cooperative_robot.jpg" alt="Non-Cooperative Robot Project" class="img-fluid shadow">
+                </div>
+                <div class="col-md-8">
+                    <h3>Control Methods for Space Robots in Capturing Non-Cooperative Targets</h3>
+                    <p>This undergraduate capstone project focused on developing and simulating control strategies for a space robot designed to capture non-cooperative targets. Key achievements and methodologies include:</p>
+                    <ul>
+                        <li><strong>System Modeling:</strong> Established a three-degree-of-freedom space robot system using Lagrangian equations, multibody kinematics, and dynamics to accurately represent the robot’s behavior.</li>
+                        <li><strong>Dual-Loop Proportional-Integral-Derivative Control:</strong> Designed a collaborative control system for the robot’s base platform and manipulator, effectively addressing nonlinear coupling and ensuring precise motion planning and trajectory execution.</li>
+                        <li><strong>Deep Reinforcement Learning Integration:</strong> Implemented Soft Q-Learning algorithms to train adaptive target capture strategies, enhancing the robot’s ability to handle dynamic conditions and improve task execution through intelligent decision-making.</li>
+                        <li><strong>Collision Force Consideration:</strong> Incorporated collision force dynamics to refine capture precision, ensuring robust performance under various disturbances and nonlinear interactions.</li>
+                    </ul>
+                </div>
+            </div>           
+
+            <!-- Dynamic Topology and Fault-Tolerant Control -->
+            <div class="row align-items-center border-bottom pb-4 mb-4">
+                <div class="col-md-4">
+                    <img src="dynamic_topology.jpg" alt="Dynamic Topology Project" class="img-fluid shadow">
+                </div>
+                <div class="col-md-8">
+                    <h3>Dynamic Topology and Fault-Tolerant Control in Heterogeneous Formations</h3>
+                    <p>This project explores a comprehensive approach to controlling a formation of heterogeneous satellites under communication delays, dynamic topology changes, and various fault modes. By integrating advanced theoretical concepts into an existing simulation framework, the goal is to ensure stable and efficient cooperation among satellites despite differences in their dynamics, external disturbances, and actuator faults.</p>
+                    <ul>
+                        <li><strong>Heterogeneous Dynamics:</strong> Each agent may have distinct system matrices, control inputs, and nonlinearities, allowing the method to handle structural and functional diversity within the formation.</li>
+                        <li><strong>Dynamic Topology Switching:</strong> Using a semi-Markov chain model, the network topology can switch among multiple predefined configurations, representing communication link changes or structural faults in real time.</li>
+                        <li><strong>Improved Fault Representation and Handling:</strong> The proposed scheme accommodates both multiplicative (efficiency decline) and additive (external disturbance) faults. A unified fault model enables comprehensive detection and rapid compensation.</li>
+                        <li><strong>Game-Theoretic and Approximate Optimal Control:</strong> By framing faults as adversarial players in a differential game, and employing a generalized fuzzy hyperbolic model (GFHM) to approximate value functions, the method reduces complexity and computational overhead.  
+                            This approach ensures that, under various fault scenarios, the satellites maintain stable tracking behavior, achieve convergence, and effectively adapt their control gains. The approximate value functions and adaptive weight updates confirm the robustness and improved performance over traditional, more conservative methods.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Hybrid Control Modeling -->
+            <div class="row align-items-center border-bottom pb-4 mb-4">
+                <div class="col-md-4">
+                    <img src="hybrid_control.jpg" alt="Hybrid Control Project" class="img-fluid shadow">
+                </div>
+                <div class="col-md-8">
+                    <h3>Hybrid Control Modeling and Simulation for Heavy Truck Platooning</h3>
+                    <p>This project focuses on the modeling and simulation of a heavy truck platoon formation scenario using hybrid systems theory. The approach captures both continuous dynamics (vehicle motion and spacing) and discrete events (formation changes), ensuring that multiple vehicles operating under uncertain conditions can merge into a single stable platoon.</p>
+                    <p>By representing each vehicle as an agent with position and velocity states, the system integrates continuous evolution with sudden jumps triggered when certain conditions are met—such as two vehicles aligning their positions. To manage these transitions and maintain stability, logical variables are introduced to record platoon membership and prevent unnecessary repeated jumps once the formation is established. The result is a hybrid control framework that guarantees the eventual convergence of all vehicles to a common velocity and position set, forming a unified platoon in finite time.</p>
+                    <ul>
+                        <li><strong>Hybrid System Framework:</strong> Unified continuous position updates with discrete jump events to model complex platoon dynamics.</li>
+                        <li><strong>Logic Variables for Memory:</strong> Ensured that once vehicles merge, the system avoids infinite jump loops and stabilizes the platoon configuration.</li>
+                        <li><strong>Robust Convergence Guarantees:</strong> Demonstrated finite-time convergence to a stable platoon, enabling reliable operation despite initial separation and varying conditions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--  Multi-agent Control under Markovian DoS Attacks -->
+            <div class="row align-items-center border-bottom pb-4 mb-4">
+                <div class="col-md-4">
+                    <img src="multi_agent_control.jpg" alt="Multi-Agent Control Project" class="img-fluid shadow">
+                </div>
+                <div class="col-md-8">
+                    <h3>Multi-agent Control under Markovian DoS Attacks</h3>
+                    <p>This project explores a multi-vehicle coordination control strategy under a Markovian switching sampling framework with intermittent Denial-of-Service (DoS) attacks. By modeling the leader-follower platooning system in discrete time and incorporating time-varying sampling intervals, we leverage state feedback control gains to achieve consensus and maintain stable formation despite disturbances. The approach involves simulating three follower vehicles tracking a leader’s trajectory while adapting control inputs based on a Markov chain governing the sampling rates. Results demonstrate that, even under random DoS attacks and nonlinear perturbations (e.g., sinusoidal disturbances), the proposed strategy ensures robust and reliable convergence of follower vehicles to desired positions and velocities.</p>
+                </div>
+            </div>  
         </section>
         
-        <section id="projects" style="display: none;">
-            <h2>Projects</h2>
-            <p>Satellite Fault Detection</p>
-            <p><strong>Autonomous Path Planning for Space Robots Based on Vision Measurement</strong></p>
-            <p>The research background for this project is the placement and trajectory planning problem of a free-floating space robot, and a space robot system based on visual measurement has been designed. Initially, monocular vision is used to preliminarily measure the cooperative target, and the target's motion is estimated based on the measurement results. According to the predicted target motion velocity, velocity planning is carried out for both the end of the robot arm and the base. With the determined end-effector velocity, velocity-level inverse kinematics is employed to solve for the joint angular velocities, thus controlling joint movements. Finally, forward kinematics recalculates the position and orientation of the robot arm's end. Additionally, a system model was built in SIMULINK, incorporating a PID control module to adjust relevant parameters until the joint movements were smooth, and visualized the process of the space robot placing the target.</p>
-            <video width="640" height="360" controls>
-                <source src="space_robot.mp4" type="video/mp4">
-                Your browser does not support the video tag, but you can still download the video from <a href="space_robot.mp4">here</a>.
-            </video>
-        </section>
+        <section id="recommended-books" class="container mt-5" style="display: none;">
+            <!-- Book 1 -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <img src="book.jpg" alt="Lying on the Couch" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Lying on the Couch</h3>
+                            <p>My second book of Points of Views (POV), truly astonishing! The author uses the POV technique to create a wonderful suspense story and also provides a wealth of psychological knowledge. For instance, medications for treating depression such as Risperidone and Paxil are discussed. The writing is deeply pragmatic, featuring a sensitive and impressionable new therapist as the male protagonist, an ambitious and ruthless mentor, and a strong yet vulnerable female lead. The story begins with a veteran consultant embroiled in a sexual scandal with a patient. He argues that engaging genuinely with patients rather than maintaining a professional distance can be more beneficial. It seems his patient has indeed changed significantly, but there might be more to the story. Is this the truth, or just an excuse he concocted to seduce his patient?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         
-        <section id="recommended-books" style="display: none;">
-            <h2>Recommended Books</h2>
-            <h3>Latest: Lying on the Couch</h3>
-            <p>My second book of Points of Views (POV), truly astonishing! The author uses the POV technique to create a wonderful suspense story and also provides a wealth of psychological knowledge. For instance, medications for treating depression such as Risperidone and Paxil are discussed. The writing is deeply pragmatic, featuring a sensitive and impressionable new therapist as the male protagonist, an ambitious and ruthless mentor, and a strong yet vulnerable female lead. The story begins with a veteran consultant embroiled in a sexual scandal with a patient. He argues that engaging genuinely with patients rather than maintaining a professional distance can be more beneficial. It seems his patient has indeed changed significantly, but there might be more to the story. Is this the truth, or just an excuse he concocted to seduce his patient?</p>
-            <p>Sapiens</p>
-            <p>Walden</p>
-        </section>
+            <!-- Book 2 -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h3>Sapiens: A Brief History of Humankind</h3>
+                            <p>A thought-provoking book that explores the history of humankind. It discusses the cognitive revolution, agricultural revolution, and scientific revolution, highlighting how these pivotal events reshaped human life.</p>
+                            <p>By analyzing concepts like imagined orders, human cooperation, and cultural evolution, the book offers a profound look at human progress and society.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="plant.jpg" alt="Sapiens" class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
         
-        <section id="recent-music" style="display: none;">
-            <h2>Recent Music</h2>
-            <p>The Other Side of Paradise</p>
-        </section>
+            <!-- Book 3 -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <img src="couch.jpg" alt="Walden" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Walden</h3>
+                            <p>A timeless classic on the value of simplicity, self-reflection, and living harmoniously with nature. The book describes Thoreau's two years in a cabin near Walden Pond, emphasizing minimalism and the pursuit of a meaningful existence.</p>
+                            <p>It invites readers to embrace simplicity and rediscover the beauty of life through self-awareness and a harmonious relationship with the world.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
         
-        <section id="musings" style="display: none;">
-            <h2>Musings</h2>
-            <p>💬 Share your thoughts today!</p>
-            <div id="musings-posts"></div>
-            <input type="text" id="username" placeholder="Username">
-            <textarea id="musing-content" placeholder="Your musings here (up to 2000 characters)..." maxlength="2000"></textarea>
-            <input type="file" id="musing-image" accept="image/*" style="display: none;">
-            <div class="button-container">
-                <label for="musing-image" class="camera-icon"></label>
-                <button onclick="postMusing()">Post</button>
-            </div>         
+        <section id="unique-music" class="container mt-5" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <!-- Circular Video Container -->
+                    <div class="video-container">
+                        <video class="circle-video" muted loop>
+                            <source src="record.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h3>Mikky Ekko - Who Are You, Really?</h3>
+                    <p>By Mikky Ekko - A song of strength and determination. It evokes the image of a sinful metropolis, standing on top of a skyscraper, ready to destroy everything. It captures feelings of isolation and betrayal, reminding one of the protagonist in *The Bourne Identity*.</p>
+                </div>
+            </div>            
+        
+            <!-- Music List -->
+            <div class="row">
+                <!-- Song 1 -->
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <img src="riverside.jpg" class="card-img-top" alt="Riverside">
+                        <div class="card-body">
+                            <h5 class="card-title">Agnes Obel - Riverside</h5>
+                            <p>By Agnes Obel - A tranquil and reflective piece. It brings to mind the image of being alone by a shimmering creek under the sunlight, surrounded by fresh and crisp greenery, evoking a serene and refreshing feeling.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Song 2 -->
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <img src="paradise.jpg" class="card-img-top" alt="The Other Side of Paradise">
+                        <div class="card-body">
+                            <h5 class="card-title">Glass Animals - The Other Side of Paradise</h5>
+                            <p>By Glass Animals - A hypnotic rhythm that feels like unsuccessfully advising a young person, who then gets drawn into worldly chaos. It leaves a sense of regret and sorrow.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Song 3 -->
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <img src="adia.jpg" class="card-img-top" alt="阿刁">
+                        <div class="card-body">
+                            <h5 class="card-title">张韶涵 - 阿刁</h5>
+                            <p>By Zhang Shaohan - An inspiring and resilient song. It reflects the spirit of standing up to difficulties and never giving in, mirroring my own perseverance in facing life’s challenges.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Song 4 -->
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <img src="rain.jpg" class="card-img-top" alt="淋雨一直走">
+                        <div class="card-body">
+                            <h5 class="card-title">张韶涵 - 淋雨一直走</h5>
+                            <p>By Zhang Shaohan - A song that embodies strength and determination. It reflects the feeling of walking forward resolutely, despite the rain, and embracing challenges head-on.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <section id="musings" class="container my-5" style="display: none;">
+            <h3 class="text-center mb-4">💬 Share your thoughts today!</h3>
+            
+            <!-- Musings Post Section -->
+            <div id="musings-posts" class="mb-4">
+                <!-- Placeholder for musings posts -->
+            </div>
+        
+            <!-- Input Form -->
+            <div class="card p-4 shadow-sm">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                </div>
+                <div class="mb-3">
+                    <label for="musing-content" class="form-label">Your Musings</label>
+                    <textarea class="form-control" id="musing-content" placeholder="Your musings here (up to 2000 characters)..." maxlength="2000" rows="4"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="musing-image" class="form-label">Attach an Image</label>
+                    <input type="file" class="form-control" id="musing-image" accept="image/*">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="postMusing()">Post</button>
+                </div>
+            </div>
+        </section>               
     </div>    
     
     <footer>
         <p>It' s wonderful if you reached out to her:</p>
         <p>Email: <a href="mailto:domain@example.com">284712913@qq.com</a></p>
     </footer>
-    <script src="script.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>   
 
 </body>
 </html>

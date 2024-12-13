@@ -1,12 +1,56 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-image: url('background.jpeg'); /* 使用平铺的背景图 */
-    background-repeat: repeat;
+    font-family: Arial, sans-serif; /* 默认字体 */
 }
 
+html, body {
+    width: 100%; /* 确保根元素填满横向空间 */
+    height: 100%; /* 确保高度填满 */
+    margin: 0; /* 移除默认外边距 */
+    padding: 0; /* 移除默认内边距 */
+    display: flex;
+    flex-direction: column; /* 页面内容沿主轴（垂直方向）排列 */
+}
+/* 隐藏文本容器与文本初始状态 */
+#about-text p {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+  }
+  
+  /* 当添加.show类时，文本会淡入显示 */
+  #about-text p.show {
+    opacity: 1;
+  }
+  
+  /* 视频容器样式 */
+  #intro-video {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  /* 鼠标不悬停时隐藏视频控件 (webkit内核) */
+  #intro-video:not(:hover)::-webkit-media-controls {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  #intro-video:not(:hover)::-webkit-media-controls-enclosure {
+    display: none !important;
+  }
+  
+  /* 针对非Webkit浏览器可能需要额外CSS处理，这里简单处理 */
+  #intro-video:not(:hover) {
+    controls: hidden;
+  }
+  
+  /* 初始隐藏文字区块 */
+  #about-text {
+    display: none;
+    margin-top: 2rem;
+  }
+  
 html, body {
     width: 100%; /* 确保根元素填满横向空间 */
     height: 100%; /* 确保高度填满 */
@@ -23,6 +67,16 @@ header {
     padding: 50px 0; /* 修改内边距，仅在顶部和底部添加 */
     margin: 0 auto;
     width: 100%; /* 确保头部填满横向空间 */
+}
+
+header img {
+    display: block; /* 确保图片为块级元素 */
+    margin: 0 auto; /* 图片居中 */
+    margin-bottom: 20px; /* 调整图片下方的间距 */
+}
+
+header h1 {
+    margin-top: 20px; /* 增加文本上方的间距 */
 }
 
 nav {
@@ -77,6 +131,59 @@ section {
     padding: 20px; /* 这会为内容区域内部提供一些空间，根据你的设计需要可能要调整 */
 }
 
+/* Begin: Projects Section Styling */
+#projects img {
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#projects h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#projects .border-bottom {
+    border-color: #ddd;
+}
+
+#projects ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+#projects ul li {
+    margin-bottom: 0.5rem;
+}
+/* End: Projects Section Styling */
+
+/* Circular Video Container */
+.video-container {
+    width: 200px; /* Set the desired size */
+    height: 200px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%; /* Make it circular */
+    overflow: hidden; /* Ensure video stays inside the circle */
+    position: relative;
+}
+
+.circle-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video fits inside the circle */
+    opacity: 1; /* Always visible */
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* Optional: Zoom effect on hover */
+.video-container:hover .circle-video {
+    transform: scale(1.05); /* Slight zoom when hovered */
+}
+
+/* Play on hover */
+.video-container:hover .circle-video {
+    opacity: 1;
+}
+
 #musings {
     display: flex;
     flex-direction: column;
@@ -120,18 +227,17 @@ button {
 }
 
 footer {
-    height: 40px;
-    position: relative;
-    background-color: #666600;
+    width: 100%; /* Ensure the footer stretches across the full width */
+    background-color: #666600; /* Match your desired background color */
     color: white;
     font-size: 0.8em;
     text-align: center;
     padding: 20px; 
-    margin-top: 20px;
+    margin: 0; /* Remove any margin that could break the layout */
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
 }
 
 footer p {
     margin: 0;
 }
-
 
